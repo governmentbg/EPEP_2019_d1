@@ -1,0 +1,8 @@
+/storage/database/status
+/storage/static/*
+/vendor
+/.vscode
+/.vs
+/.phpls
+/.env
+/storage/intl/*.php

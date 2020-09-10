@@ -1,0 +1,39 @@
+{
+    "name" : "is-bg/justice",
+    "description" : "Court sites",
+    "version" : "2.2.0",
+    "type": "project",
+    "config" : {
+        "platform" : {
+            "php" : "7.2"
+        },
+        "sort-packages" : true,
+        "bin-compat": "full"
+    },
+    "require": {
+        "dg/composer-cleaner": "^2.1",
+        "vakata/cache" : "~2.0",
+        "vakata/collection" : "~1.5",
+        "vakata/config" : "~2.0",
+        "vakata/database" : "~3.10",
+        "vakata/di" : "~1.0",
+        "vakata/files" : "~1.4",
+        "vakata/http" : "~3.0.7",
+        "vakata/image" : "~2.1",
+        "vakata/intl" : "~2.0",
+        "vakata/jwt" : "~3.0",
+        "vakata/mail": "^1.2",
+        "vakata/phptree" : "~3.1",
+        "league/plates": "~3.3",
+        "vakata/middleman": "~4.0"
+    },
+    "scripts": {
+        "tools": "@php scripts/tools.php",
+        "phpstan": "@php tools/phpstan.phar analyze -l 6 -c .phpstan.neon app public scripts",
+        "phpcs": "@php tools/phpcs.phar --standard=PSR2 --extensions=php --exclude=Generic.Files.LineLength --ignore=*/vendor/*,*/node_modules/*,*/storage/* ./",
+        "phpcsfix": "@php tools/phpcbf.phar --standard=PSR2 --extensions=php --ignore=*/vendor/*,*/node_modules/*,*/storage/* ./"
+    },
+    "autoload": {
+        "psr-4": { "": "app/classes/" }
+    }
+}

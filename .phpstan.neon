@@ -1,0 +1,10 @@
+parameters:
+	checkMissingIterableValueType: false
+	ignoreErrors:
+		- '#Constant [^ ]+ not found#'
+		- '#typehint specified#'
+	excludes_analyse:
+		- */views/*
+	universalObjectCratesClasses:
+		- vakata\phptree\Node
+		- site\Page
